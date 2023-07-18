@@ -70,7 +70,8 @@ h1 {
   text-shadow: 2px 2px 4px #e9603c;
 }
 
-h5 {
+h5,
+h6 {
   font-family: $fontfamily-title;
   color: $color-black;
 }
@@ -105,10 +106,12 @@ body {
   margin: 3rem 0rem;
 
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .c-filter {
+  margin: 0.5rem;
   color: $color-white;
   border: solid 2px #e9603c;
   padding: 0.5rem 1.5rem;
@@ -182,3 +185,9 @@ body {
 /*---------------------------------------/*
  # UTILITIES
 /*---------------------------------------*/
+
+@media (min-width: 992px) {
+  .c-filters {
+    margin-top: 15px;
+  }
+}
