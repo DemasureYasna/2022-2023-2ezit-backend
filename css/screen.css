@@ -1,0 +1,160 @@
+/*---------------------------------------/*
+ # SETTINGS
+/*---------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/*---------------------------------------/*
+ # GENERIC - BOOTSTRAP
+/*---------------------------------------*/
+.form-check-input {
+  margin-right: 0.5rem;
+}
+.form-check-input:checked {
+  background-color: #e9603c;
+  border: #e9603c;
+}
+.form-check-input:focus {
+  border: #ffffff;
+}
+
+.card {
+  border-radius: 0;
+  background-color: #fff;
+  padding-top: 0;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 3rem;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card-text {
+  color: #212529;
+}
+
+/*---------------------------------------/*
+ # ELEMENTS
+/*---------------------------------------*/
+p,
+span {
+  font-family: "Roboto";
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Poppins";
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #e9603c;
+}
+
+h5 {
+  font-family: "Poppins";
+  color: #212529;
+}
+
+body {
+  background-color: #1b1529;
+}
+
+/*---------------------------------------/*
+ # OBJECTS
+/*---------------------------------------*/
+/*---------------------------------------/*
+ # COMPONENTS
+/*---------------------------------------*/
+.c-header {
+  background-image: url(../images/header.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  padding: 14rem 0 4rem;
+  text-align: center;
+}
+.c-header__caption {
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px #e9603c;
+}
+
+.c-filters {
+  margin: 3rem 0rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.c-filter {
+  color: #ffffff;
+  border: solid 2px #e9603c;
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+}
+.c-filter:hover {
+  background-color: #e9603c;
+  padding: 0.5rem 1.5rem;
+}
+
+.c-uitverkocht {
+  display: flex;
+  justify-content: center;
+}
+
+.c-btn {
+  padding: 0.5rem 1.5rem;
+  background-color: #e9603c;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+.c-btn__arrow {
+  margin-left: 1rem;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.4s ease, right 0.4s ease;
+}
+.c-btn:hover {
+  padding-right: 45px;
+}
+
+/* Styles for the arrow icon when the button is hovered */
+.c-btn:hover i {
+  opacity: 1;
+}
+
+.c-cards {
+  margin-bottom: 3rem;
+}
+
+.c-cards .row {
+  margin-bottom: 1rem;
+}
+
+.c-footer {
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+}
+.c-footer__copy {
+  font-family: "Roboto";
+  font-size: 0.75rem;
+}
+.c-footer__line {
+  color: #e9603c;
+}
+
+/*---------------------------------------/*
+ # UTILITIES
+/*---------------------------------------*/
