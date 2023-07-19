@@ -44,10 +44,18 @@ $fontsize-h3: 1.5rem;
   &:hover {
     transform: scale(1.1);
   }
+
+  &--soortgelijk {
+    margin-top: 2rem;
+  }
 }
 
 .card-text {
   color: $color-black;
+}
+
+.card-title {
+  margin-bottom: 1rem;
 }
 /*---------------------------------------/*
  # ELEMENTS
@@ -68,6 +76,13 @@ h1 {
   font-size: $fontsize-h1;
   color: $color-white;
   text-shadow: 2px 2px 4px #e9603c;
+}
+
+h2 {
+  font-family: $fontfamily-title;
+  font-size: $fontsize-h2;
+  color: $color-white;
+  margin: 0;
 }
 
 h5,
@@ -129,8 +144,6 @@ body {
   justify-content: center;
 }
 
-// styles.scss
-
 .c-btn {
   padding: 0.5rem 1.5rem;
   background-color: #e9603c;
@@ -152,12 +165,31 @@ body {
     opacity: 0;
     transition: opacity 0.4s ease, right 0.4s ease;
   }
+
   &:hover {
     padding-right: 45px;
   }
+
+  &__detail {
+    padding: 0.5rem 1.5rem;
+    background-color: #e9603c;
+    color: $color-white;
+
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+
+    &--back {
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin: 3rem;
+    }
+  }
 }
 
-/* Styles for the arrow icon when the button is hovered */
 .c-btn:hover i {
   opacity: 1;
 }
@@ -168,6 +200,31 @@ body {
 
 .c-cards .row {
   margin-bottom: 1rem;
+}
+
+.c-product {
+  &__titel {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__image {
+    display: inline-block;
+    align-self: center;
+  }
+}
+
+.c-icon {
+  color: $color-white;
+
+  &--add {
+    padding-right: 0.5rem;
+  }
 }
 
 .c-footer {
@@ -190,5 +247,41 @@ body {
 @media (min-width: 992px) {
   .c-filters {
     margin-top: 15px;
+  }
+}
+
+@media (max-width: 460px) {
+  .c-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .c-btn__detail--back {
+    position: unset;
+    margin-bottom: 1rem;
+    order: 1;
+  }
+
+  .c-product__titel {
+    margin-top: 1rem;
+    order: 2;
+  }
+
+  .c-btn__detail--back span {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 461px) and (max-width: 653px) {
+  .c-btn__detail--back span {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .card:hover {
+    /* Reset the transform on hover */
+    transform: scale(1);
   }
 }

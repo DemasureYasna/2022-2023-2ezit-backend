@@ -29,9 +29,16 @@
 .card:hover {
   transform: scale(1.1);
 }
+.card--soortgelijk {
+  margin-top: 2rem;
+}
 
 .card-text {
   color: #212529;
+}
+
+.card-title {
+  margin-bottom: 1rem;
 }
 
 /*---------------------------------------/*
@@ -53,6 +60,13 @@ h1 {
   font-size: 2.5rem;
   color: #ffffff;
   text-shadow: 2px 2px 4px #e9603c;
+}
+
+h2 {
+  font-family: "Poppins";
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0;
 }
 
 h5,
@@ -133,8 +147,23 @@ body {
 .c-btn:hover {
   padding-right: 45px;
 }
+.c-btn__detail {
+  padding: 0.5rem 1.5rem;
+  background-color: #e9603c;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+.c-btn__detail--back {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 3rem;
+}
 
-/* Styles for the arrow icon when the button is hovered */
 .c-btn:hover i {
   opacity: 1;
 }
@@ -145,6 +174,26 @@ body {
 
 .c-cards .row {
   margin-bottom: 1rem;
+}
+
+.c-product__titel {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.c-product__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.c-product__image {
+  display: inline-block;
+  align-self: center;
+}
+
+.c-icon {
+  color: #ffffff;
+}
+.c-icon--add {
+  padding-right: 0.5rem;
 }
 
 .c-footer {
@@ -165,5 +214,35 @@ body {
 @media (min-width: 992px) {
   .c-filters {
     margin-top: 15px;
+  }
+}
+@media (max-width: 460px) {
+  .c-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .c-btn__detail--back {
+    position: unset;
+    margin-bottom: 1rem;
+    order: 1;
+  }
+  .c-product__titel {
+    margin-top: 1rem;
+    order: 2;
+  }
+  .c-btn__detail--back span {
+    display: inline-block;
+  }
+}
+@media (min-width: 461px) and (max-width: 653px) {
+  .c-btn__detail--back span {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  .card:hover {
+    /* Reset the transform on hover */
+    transform: scale(1);
   }
 }
