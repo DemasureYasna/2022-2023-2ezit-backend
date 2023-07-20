@@ -1,6 +1,7 @@
 <?php
 require_once dirname(__FILE__) . "/../model/schoenen.php";
 require_once dirname(__FILE__) . "/../model/schoenentypes.php";
+require_once dirname(__FILE__) . "/../model/users.php";
 require_once dirname(__FILE__) . "/../database/database.php";
 
 class Schoenenrepository
@@ -39,5 +40,11 @@ class Schoenenrepository
     {
         $int = Database::execute("DELETE FROM `schoenen` WHERE id = ?", [$parID]);
         return $int;
+    }
+
+    public static function getUserByEmail($parEmail)
+    {
+        $arr = Database::getSingleRow("SELECT * FROM `users` WHERE email=?", [$parEmail], "User");
+        return $arr;
     }
 };

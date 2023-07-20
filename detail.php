@@ -1,4 +1,5 @@
 <?php
+require dirname(__FILE__) . "/src/helper/auth.php";
 require_once dirname(__FILE__) . "/src/helper/debug.php";
 require_once dirname(__FILE__) . "/src/repository/repository.php";
 
@@ -9,6 +10,8 @@ $arrFilters = Schoenenrepository::getAllSchoenentypes();
 
 $schoenId = $_GET['schoen_id'] - 1;
 
+
+$isIngelogd = false;
 ?>
 
 
@@ -39,13 +42,13 @@ $schoenId = $_GET['schoen_id'] - 1;
                     </div>
 
 
-                    <div class='col-12 col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+                    <div class='col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12'>
                         <?php
                         echo " <img class='c-product__image img-fluid' src='" . $arrSchoenen[$schoenId]->afbeelding . "'  alt='productfoto' height='500' width='500'>"
                         ?>
                     </div>
 
-                    <div class='col-12 col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+                    <div class='col-12 col-xxl-6 offset-xxl-1 col-xl-6 offset-xl-1 col-lg-6 offset-lg-1 col-md-6 offset-md-1 col-sm-12 col-xs-12'>
                         <div class='c-product__info'>
 
                             <?php
@@ -64,11 +67,7 @@ $schoenId = $_GET['schoen_id'] - 1;
                         <div class='c-product__buttons'>
 
                             <?php
-
-                            echo " <a href='create-item.php?schoen_id=" . $schoenId . "' class='c-btn__detail'><i class='bi bi-plus-lg c-icon c-icon--add'></i>Item toevoegen</a>";
-                            echo "<a href='update-item.php?schoen_id=" . $schoenId . "' class='c-btn__detail'><i class='bi bi-pencil-fill c-icon'></i></a>";
-                            echo " <a href='delete-item-verwerk.php?schoen_id=" . $schoenId . "' class='c-btn__detail'><i class='bi bi-trash-fill c-icon'></i></a>";
-
+                            toonEditBtns();
                             ?>
 
                         </div>

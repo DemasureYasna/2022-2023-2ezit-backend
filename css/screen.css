@@ -36,6 +36,57 @@
   color: #ffffff;
 }
 
+form {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 2px 2px 4px #e9603c;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  font-size: 1rem;
+  color: #212529;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+form .c-form__label {
+  margin-bottom: 1rem;
+  font-family: "Roboto";
+  font-size: 1rem;
+  border-radius: 8px;
+}
+form .c-form__input {
+  margin-bottom: 1rem;
+}
+form .c-form__input input,
+form .c-form__input .c-form__select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form .c-form__input input[type=checkbox] {
+  width: auto;
+}
+form .c-form__uitverkocht {
+  display: flex;
+}
+form .c-form__input input[type=submit] {
+  background-color: #e9603c;
+  color: #fff;
+  border: none;
+  width: 30%;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.form-check-input[type=checkbox] {
+  border-radius: 0.25em;
+  margin-right: 0.5rem;
+}
+.form-check-input[type=checkbox]:checked {
+  background-color: #e9603c;
+  border: #e9603c;
+}
+
 /*---------------------------------------/*
  # ELEMENTS
 /*---------------------------------------*/
@@ -197,6 +248,19 @@ body {
   color: #e9603c;
 }
 
+.c-admin {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  padding-left: 0.5rem;
+  font-family: "Roboto";
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+  background-color: #e9603c;
+  padding: 0.5rem 1rem;
+}
+
 /*---------------------------------------/*
  # UTILITIES
 /*---------------------------------------*/
@@ -233,53 +297,4 @@ body {
   .card:hover {
     transform: scale(1);
   }
-}
-form {
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 2px 2px 4px #e9603c;
-  border-radius: 8px;
-  padding: 3rem 2rem;
-  font-size: 1rem;
-  color: #212529;
-  margin-top: 2rem;
-}
-form .c-form__label {
-  margin-bottom: 1rem;
-  font-family: "Roboto";
-  font-size: 1rem;
-  border-radius: 8px;
-}
-form .c-form__input {
-  margin-bottom: 1rem;
-}
-form .c-form__input input,
-form .c-form__input .c-form__select {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-form .c-form__input input[type=checkbox] {
-  width: auto;
-}
-form .c-form__uitverkocht {
-  display: flex;
-}
-form .c-form__input input[type=submit] {
-  background-color: #e9603c;
-  color: #fff;
-  border: none;
-  width: 30%;
-  padding: 0.5rem 1rem;
-  border-radius: 0;
-  cursor: pointer;
-}
-
-.form-check-input[type=checkbox] {
-  border-radius: 0.25em;
-  margin-right: 0.5rem;
-}
-.form-check-input[type=checkbox]:checked {
-  background-color: #e9603c;
-  border: #e9603c;
 }
