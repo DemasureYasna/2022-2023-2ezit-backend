@@ -82,7 +82,7 @@ if (isset($_GET['filter_Id'])) {
                         echo "<h5 class='card-title'>" . $schoen->merk . "</h5>";
                         echo "<p class='card-text'>" . $schoen->benaming . "</p>";
                         echo "<h6 class='card-title'>€" . $schoen->prijs . "</h6>";
-                        echo "<a href='detail.html?schoen_id=" . $schoen->id . "' class='c-btn'><span>Meer details</span><i class='bi bi-arrow-right c-btn__arrow'></i></a>";
+                        echo "<a href='detail.php?schoen_id=" . $schoen->id . "' class='c-btn'><span>Meer details</span><i class='bi bi-arrow-right c-btn__arrow'></i></a>";
                         echo "</div>";
                         echo "</div>";
                         echo "</div>";
