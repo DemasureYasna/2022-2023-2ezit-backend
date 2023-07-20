@@ -5,13 +5,14 @@ require_once dirname(__FILE__) . "/src/repository/repository.php";
 
 $arrSchoenen = Schoenenrepository::getAllSchoenen();
 
-
 $arrFilters = Schoenenrepository::getAllSchoenentypes();
 
-$schoenId = $_GET['schoen_id'] - 1;
+
+$schoenId = $_GET['schoen_id'];
+
+$arrSchoen = Schoenenrepository::getSchoenenById($schoenId);
 
 
-$isIngelogd = false;
 ?>
 
 
@@ -36,7 +37,7 @@ $isIngelogd = false;
                     <div class="col-12 c-back">
 
 
-                        <h1 class="c-product__titel"><?php echo $arrFilters[$arrSchoenen[$schoenId]->typeId - 1]->typeNaam ?></h1>
+                        <h1 class="c-product__titel"><?php echo $arrFilters[$arrSchoen->typeId - 1]->typeNaam ?></h1>
 
                         <a href="index.php" class="c-btn__detail c-btn__detail--back"><i class="bi bi-caret-left-fill"></i><span>Terug naar overzicht</span></a>
                     </div>
@@ -44,7 +45,7 @@ $isIngelogd = false;
 
                     <div class='col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12'>
                         <?php
-                        echo " <img class='c-product__image img-fluid' src='" . $arrSchoenen[$schoenId]->afbeelding . "'  alt='productfoto' height='500' width='500'>"
+                        echo " <img class='c-product__image img-fluid' src='" . $arrSchoen->afbeelding . "'  alt='productfoto' height='500' width='500'>"
                         ?>
                     </div>
 
@@ -53,11 +54,11 @@ $isIngelogd = false;
 
                             <?php
 
-                            echo "<h2 class='c-product__titel'>" . $arrSchoenen[$schoenId]->merk . "</h2>";
-                            echo "<p class='c-product__beschrijving'>" . $arrSchoenen[$schoenId]->benaming . "</p>";
-                            echo "<p class='c-product__price'>&euro;" . $arrSchoenen[$schoenId]->prijs . "</p>";
+                            echo "<h2 class='c-product__titel'>" . $arrSchoen->merk . "</h2>";
+                            echo "<p class='c-product__beschrijving'>" . $arrSchoen->benaming . "</p>";
+                            echo "<p class='c-product__price'>&euro;" . $arrSchoen->prijs . "</p>";
 
-                            if ($arrSchoenen[$schoenId]->uitverkocht) {
+                            if ($arrSchoen->uitverkocht) {
                                 echo "<p class='c-product__promo'>Dit model is momenteel uitverkocht</p>";
                             }
 
@@ -85,15 +86,15 @@ $isIngelogd = false;
                     <div class="col-12">
 
                         <?php
-                        echo "<h2 class='c-product__titel'> Gelijkaardige " . $arrFilters[$arrSchoenen[$schoenId]->typeId - 1]->typeNaam . "</h2>";
+                        echo "<h2 class='c-product__titel'> Gelijkaardige " . $arrFilters[$arrSchoen->typeId - 1]->typeNaam . "</h2>";
                         ?>
 
                     </div>
 
                     <?php
                     foreach ($arrSchoenen as $schoen) {
-                        if ($schoen->id != $arrSchoenen[$schoenId]->id) {
-                            if ($schoen->typeId == $arrSchoenen[$schoenId]->typeId) {
+                        if ($schoen->id != $arrSchoen->id) {
+                            if ($schoen->typeId == $arrSchoen->typeId) {
                                 echo "<div class='col-12 col-lg-3 col-md-6'>";
                                 echo "<div class='card  card--soortgelijk'>";
 
