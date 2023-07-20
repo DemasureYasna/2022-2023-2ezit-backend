@@ -67,7 +67,7 @@ $schoenId = $_GET['schoen_id'] - 1;
 
                             echo " <a href='create-item.php?schoen_id=" . $schoenId . "' class='c-btn__detail'><i class='bi bi-plus-lg c-icon c-icon--add'></i>Item toevoegen</a>";
                             echo "<a href='update-item.php?schoen_id=" . $schoenId . "' class='c-btn__detail'><i class='bi bi-pencil-fill c-icon'></i></a>";
-                            echo " <a href='delete-item.php?schoen_id=" . $schoenId . "' class='c-btn__detail'><i class='bi bi-trash-fill c-icon'></i></a>";
+                            echo " <a href='delete-item-verwerk.php?schoen_id=" . $schoenId . "' class='c-btn__detail'><i class='bi bi-trash-fill c-icon'></i></a>";
 
                             ?>
 
