@@ -13,19 +13,19 @@ class Schoenenrepository
 
     public static function getSchoenenById($parID)
     {
-        $arr = Database::getRows("SELECT id, benaming, merk, afbeelding, uitverkocht, prijs, typeId FROM `schoenen` WHERE id = ?", [$parID], "Schoen");
+        $arr = Database::getSingleRow("SELECT id, benaming, merk, afbeelding, uitverkocht, prijs, typeId FROM `schoenen` WHERE id = ?", [$parID], "Schoen");
         return $arr;
     }
 
     public static function getAllSchoenentypes()
     {
-        $arr = Database::getRows("SELECT typeId, typeNaam FROM `schoenen`", NULL, "Schoen");
+        $arr = Database::getRows("SELECT typeId, typeNaam FROM `schoentypes`", NULL, "Schoenentype");
         return $arr;
     }
 
     public static function updateSchoen($parID, $parBenaming, $parMerk, $parAfbeelding, $parUitverkocht, $parPrijs, $parTypeID)
     {
-        $int = Database::execute("UPDATE `schoenen` SET benaming = ?, merk = ?, afbeelding = ?, uitverkocht = ?, prijs = ?, typeId = ? WHERE id = ?", [$parID], [$parBenaming, $parMerk, $parAfbeelding, $parUitverkocht, $parPrijs, $parTypeID, $parID]);
+        $int = Database::execute("UPDATE `schoenen` SET benaming = ?, merk = ?, afbeelding = ?, uitverkocht = ?, prijs = ?, typeId = ? WHERE id = ?", [$parBenaming, $parMerk, $parAfbeelding, $parUitverkocht, $parPrijs, $parTypeID, $parID]);
         return $int;
     }
 
