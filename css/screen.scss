@@ -20,16 +20,6 @@ $fontsize-h3: 1.5rem;
 /*---------------------------------------/*
  # GENERIC - BOOTSTRAP
 /*---------------------------------------*/
-.form-check-input {
-  margin-right: 0.5rem;
-  &:checked {
-    background-color: #e9603c;
-    border: #e9603c;
-  }
-  &:focus {
-    border: $color-white;
-  }
-}
 
 .card {
   border-radius: 0;
@@ -239,6 +229,7 @@ body {
     color: #e9603c;
   }
 }
+
 /*---------------------------------------/*
  # UTILITIES
 /*---------------------------------------*/
@@ -280,7 +271,63 @@ body {
 
 @media (max-width: 640px) {
   .card:hover {
-    /* Reset the transform on hover */
     transform: scale(1);
+  }
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 2px 2px 4px #e9603c;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  font-size: 1rem;
+  color: #212529;
+  margin-top: 2rem;
+
+  .c-form__label {
+    margin-bottom: 1rem;
+    font-family: $fontfamily-text;
+    font-size: $fontsize-text;
+    border-radius: 8px;
+  }
+
+  .c-form__input {
+    margin-bottom: 1rem;
+
+    input,
+    .c-form__select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+    }
+  }
+
+  .c-form__uitverkocht {
+    display: flex;
+  }
+
+  .c-form__input input[type="submit"] {
+    background-color: #e9603c;
+    color: #fff;
+    border: none;
+    width: 30%;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    cursor: pointer;
+  }
+}
+
+.form-check-input[type="checkbox"] {
+  border-radius: 0.25em;
+  margin-right: 0.5rem;
+
+  &:checked {
+    background-color: #e9603c;
+    border: #e9603c;
   }
 }
