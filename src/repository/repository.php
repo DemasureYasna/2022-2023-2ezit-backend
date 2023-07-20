@@ -31,7 +31,7 @@ class Schoenenrepository
 
     public static function createSchoen($parID, $parBenaming, $parMerk, $parAfbeelding, $parUitverkocht, $parPrijs, $parTypeID)
     {
-        $int = Database::execute("INSERT INTO `schoenen` (id, benaming, merk, afbeelding, uitverkocht, prijs, typeId) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [$parID, $parBenaming, $parMerk, $parAfbeelding, $parUitverkocht, $parPrijs, $parTypeID]);
+        $int = Database::execute("INSERT INTO `schoenen` (id, benaming, merk, afbeelding, uitverkocht, prijs, typeId) VALUES (?, ?, ?, ?, ?, ?, ?)", [$parID, $parBenaming, $parMerk, $parAfbeelding, $parUitverkocht, $parPrijs, $parTypeID]);
         return $int;
     }
 

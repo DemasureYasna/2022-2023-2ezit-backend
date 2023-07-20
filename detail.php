@@ -7,7 +7,6 @@ $arrSchoenen = Schoenenrepository::getAllSchoenen();
 
 $arrFilters = Schoenenrepository::getAllSchoenentypes();
 
-/* Dit haalt de variabel ?lamp_id in de url eruit en steekt het in de variabel $lampid */
 $schoenId = $_GET['schoen_id'] - 1;
 
 ?>
@@ -34,7 +33,7 @@ $schoenId = $_GET['schoen_id'] - 1;
                     <div class="col-12 c-back">
 
 
-                        <h1 class="c-product__titel"><?php $arrFilters[$arrSchoenen[$schoenId]->typeId - 1]->typeNaam ?></h1>
+                        <h1 class="c-product__titel"><?php echo $arrFilters[$arrSchoenen[$schoenId]->typeId - 1]->typeNaam ?></h1>
 
                         <a href="index.php" class="c-btn__detail c-btn__detail--back"><i class="bi bi-caret-left-fill"></i><span>Terug naar overzicht</span></a>
                     </div>
@@ -85,32 +84,40 @@ $schoenId = $_GET['schoen_id'] - 1;
             <div class="container">
                 <div class="row c-cards">
                     <div class="col-12">
-                        <h2 class="c-product__titel"> Gelijkaardige sportschoenen</h2>
+
+                        <?php
+                        echo "<h2 class='c-product__titel'> Gelijkaardige " . $arrFilters[$arrSchoenen[$schoenId]->typeId - 1]->typeNaam . "</h2>";
+                        ?>
+
                     </div>
 
-                    <div class="col-12 col-lg-3 col-md-6">
-                        <div class="card card--soortgelijk">
-                            <img src="images/adidas-performance.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">adidas Performance</h5>
-                                <p class="card-text">RUNFALCON 3 0 - Sportschoenen</p>
-                                <h6 class="card-title">€59,95</h6>
-                                <a href="detail.html" class="c-btn"><span>Meer details</span><i class="bi bi-arrow-right c-btn__arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    foreach ($arrSchoenen as $schoen) {
+                        if ($schoen->id != $arrSchoenen[$schoenId]->id) {
+                            if ($schoen->typeId == $arrSchoenen[$schoenId]->typeId) {
+                                echo "<div class='col-12 col-lg-3 col-md-6'>";
+                                echo "<div class='card  card--soortgelijk'>";
 
-                    <div class="col-12 col-lg-3 col-md-6">
-                        <div class="card card--soortgelijk">
-                            <img src="images/jack-wolfskin.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Jack Wolfskin</h5>
-                                <p class="card-text">SEATTLE 365 - Sportschoenen</p>
-                                <h6 class="card-title">€59,99</h6>
-                                <a href="detail.html" class="c-btn"><span>Meer details</span><i class="bi bi-arrow-right c-btn__arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                                if ($schoen->uitverkocht) {
+                                    echo "<span class='position-absolute top-0 end-0 py-2 px-4 badge bg-primary'>Uitverkocht</span>";
+                                };
+
+                                echo "<img src='" . $schoen->afbeelding . "' class='card-img-top'>";
+                                echo "<div class='card-body'>";
+                                echo "<h5 class='card-title'>" . $schoen->merk . "</h5>";
+                                echo "<p class='card-text'>" . $schoen->benaming . "</p>";
+                                echo "<h6 class='card-title'>€" . $schoen->prijs . "</h6>";
+                                echo "<a href='detail.php?schoen_id=" . $schoen->id . "' class='c-btn'><span>Meer details</span><i class='bi bi-arrow-right c-btn__arrow'></i></a>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                            }
+                        }
+                    }
+                    ?>
+
+
+
                 </div>
             </div>
         </section>
