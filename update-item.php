@@ -102,6 +102,17 @@ $schoenId = $_GET['schoen_id'];
             </div>
         </div>
     </article>
+
+    <footer class="c-footer__bg">
+        <div class="container">
+            <div class="row">
+                <hr class="c-footer__line">
+                <div class="col-12 text-center">
+                    <p class="c-footer__copy">&copy; 2023 - Dynamic Web Development</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

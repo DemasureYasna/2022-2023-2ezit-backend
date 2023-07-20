@@ -1,4 +1,5 @@
 <?php
+require dirname(__FILE__) . "/src/helper/auth.php";
 require_once dirname(__FILE__) . "/src/helper/debug.php";
 require_once dirname(__FILE__) . "/src/repository/repository.php";
 
@@ -100,6 +101,14 @@ if (isset($_GET['filter_Id'])) {
                 <hr class="c-footer__line">
                 <div class="col-12 text-center">
                     <p class="c-footer__copy">&copy; 2023 - Dynamic Web Development</p>
+
+                    <div class="c-admin">
+
+                        <?php toonLogin(); ?>
+
+
+                    </div>
+
                 </div>
             </div>
         </div>
