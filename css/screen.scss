@@ -57,6 +57,12 @@ $fontsize-h3: 1.5rem;
 .card-title {
   margin-bottom: 1rem;
 }
+
+.bg-primary {
+  background-color: #1b1529 !important;
+  border-radius: 0 !important;
+  color: $color-white;
+}
 /*---------------------------------------/*
  # ELEMENTS
 /*---------------------------------------*/
@@ -119,8 +125,6 @@ body {
 }
 
 .c-filters {
-  margin-bottom: 3rem;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -137,11 +141,6 @@ body {
     background-color: #e9603c;
     padding: 0.5rem 1.5rem;
   }
-}
-
-.c-uitverkocht {
-  display: flex;
-  justify-content: center;
 }
 
 .c-btn {

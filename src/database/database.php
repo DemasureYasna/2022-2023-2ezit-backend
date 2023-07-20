@@ -7,10 +7,10 @@ class Database
     {
         // set up for using PDO
         $user = 'root';
-        $pass = 'root';
+        $pass = '';
         $host = 'localhost';
         // vul de juiste database naam in (nadat je die eerst hebt geïmporteerd in je phpMyAdmin)
-        $db_name = '';
+        $db_name = 'backend-foot-fashion';
         // set up DSN
         $dsn = "mysql:host=$host;dbname=$db_name";
         $db = new PDO($dsn, $user, $pass);
@@ -60,4 +60,3 @@ class Database
     }
 
 }
-?>
