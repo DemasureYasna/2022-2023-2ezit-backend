@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
     $productId = end($arrSchoenen)->id + 1;
 
 
-    $aantalRijen = Schoenenrepository::createSchoen($productId, $productNaam, $productMerk,  $productAfbeelding,  $productPrijs, $blnproductPromo,  $productCategorie);
+    $aantalRijen = Schoenenrepository::createSchoen($productId, $productNaam, $productMerk,  $productAfbeelding, $blnproductPromo,  $productPrijs,  $productCategorie);
 
     if ($aantalRijen > 0) {
         header("location:index.php");
