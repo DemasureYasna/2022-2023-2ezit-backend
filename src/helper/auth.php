@@ -18,7 +18,7 @@ function toonLogin()
 function toonEditBtns()
 {
 
-    $schoenId = $_GET['schoen_id'] - 1;
+    $schoenId = $_GET['schoen_id'];
 
     if (isset($_SESSION["login_firstname"])) {
         echo " <a href='create-item.php?schoen_id=" . $schoenId . "' class='c-btn__detail'><i class='bi bi-plus-lg c-icon c-icon--add'></i>Item toevoegen</a>";

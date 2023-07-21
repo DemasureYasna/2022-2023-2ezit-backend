@@ -4,6 +4,7 @@ require dirname(__FILE__) . "/src/repository/repository.php";
 
 
 if (isset($_POST["submit"])) {
+    $productId = $_POST["id"];
     $productNaam = $_POST["titel"];
     $productMerk = $_POST["merk"];
     $productAfbeelding = $_POST["afbeelding"];
@@ -15,11 +16,6 @@ if (isset($_POST["submit"])) {
     } else {
         $blnproductPromo = 0;
     }
-
-
-    $arrSchoenen = Schoenenrepository::getAllSchoenen();
-
-    $productId = end($arrSchoenen)->id;
 
 
     $aantalRijen = Schoenenrepository::updateSchoen($productId, $productNaam, $productMerk,  $productAfbeelding, $blnproductPromo,  $productPrijs,  $productCategorie);

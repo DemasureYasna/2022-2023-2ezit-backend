@@ -8,6 +8,8 @@ $arrFilters = Schoenenrepository::getAllSchoenentypes();
 
 $schoenId = $_GET['schoen_id'];
 
+$arrSchoen = Schoenenrepository::getSchoenenById($schoenId);
+
 ?>
 
 <!DOCTYPE html>
@@ -37,28 +39,28 @@ $schoenId = $_GET['schoen_id'];
                         <div>
                             <div class="c-form__label">Naam van het product</div>
                             <div class="c-form__input">
-                                <input type="text" name="titel" value=<?php echo $arrSchoenen[$schoenId]->benaming; ?>>
+                                <input type="text" name="titel" value=<?php echo $arrSchoen->benaming; ?>>
                             </div>
                         </div>
 
                         <div>
                             <div class="c-form__label">Merk</div>
                             <div class="c-form__input">
-                                <input type="text" name="merk" value=<?php echo $arrSchoenen[$schoenId]->merk; ?>>
+                                <input type="text" name="merk" value=<?php echo $arrSchoen->merk; ?>>
                             </div>
                         </div>
 
                         <div>
                             <div class="c-form__label">Pad naar afbeelding</div>
                             <div class="c-form__input">
-                                <input type="text" name="afbeelding" value=<?php echo $arrSchoenen[$schoenId]->afbeelding; ?>>
+                                <input type="text" name="afbeelding" value=<?php echo $arrSchoen->afbeelding; ?>>
                             </div>
                         </div>
 
                         <div>
                             <div class="c-form__label">Prijs</div>
                             <div class="c-form__input">
-                                <input type="text" name="prijs" value=<?php echo $arrSchoenen[$schoenId]->prijs; ?>>
+                                <input type="text" name="prijs" value=<?php echo $arrSchoen->prijs; ?>>
                             </div>
                         </div>
 
@@ -84,7 +86,7 @@ $schoenId = $_GET['schoen_id'];
 
 
                             <?php
-                            if ($arrSchoenen[$schoenId]->uitverkocht) {
+                            if ($arrSchoen->uitverkocht) {
                                 echo " <input class='form-check-input c-form__checkbox' type='checkbox' value='' name='uitverkocht' checked>";
                             } else {
                                 echo " <input class='form-check-input c-form__checkbox' type='checkbox' value='' name='uitverkocht' >";
@@ -95,6 +97,7 @@ $schoenId = $_GET['schoen_id'];
 
                         </div>
                         <div>
+                            <input type="hidden" name="id" value=<?php echo $schoenId; ?>>
                             <div class="c-form__input"><input type="submit" value="Update product" name="submit"></div>
                         </div>
                     </form>
